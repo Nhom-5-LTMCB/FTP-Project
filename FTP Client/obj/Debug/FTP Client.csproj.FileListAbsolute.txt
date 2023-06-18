@@ -1,0 +1,11 @@
+E:\lập trình c#\FTP Client\FTP Client\bin\Debug\FTP Client.exe.config
+E:\lập trình c#\FTP Client\FTP Client\bin\Debug\FTP Client.exe
+E:\lập trình c#\FTP Client\FTP Client\bin\Debug\FTP Client.pdb
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.AssemblyReference.cache
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.SuggestedBindingRedirects.cache
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP_Client.Form1.resources
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP_Client.Properties.Resources.resources
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.GenerateResource.cache
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.CoreCompileInputs.cache
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.exe
+E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.pdb
