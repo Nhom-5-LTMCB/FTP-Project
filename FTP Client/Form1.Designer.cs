@@ -115,6 +115,7 @@
             this.btnUpload.TabIndex = 8;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnDownload
             // 
