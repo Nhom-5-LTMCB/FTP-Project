@@ -9,3 +9,14 @@ E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.GenerateRes
 E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.csproj.CoreCompileInputs.cache
 E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.exe
 E:\lập trình c#\FTP Client\FTP Client\obj\Debug\FTP Client.pdb
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\bin\Debug\FTP Client.exe.config
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\bin\Debug\FTP Client.exe
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\bin\Debug\FTP Client.pdb
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP_Client.Form1.resources
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP_Client.Properties.Resources.resources
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.exe
+C:\Users\ASUS\Desktop\FTP-Project\FTP Client\obj\Debug\FTP Client.pdb

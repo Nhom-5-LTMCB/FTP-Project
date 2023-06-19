@@ -39,7 +39,7 @@ namespace FTP_Client
                 {
                     // Đăng nhập thành công
                     MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.None);
-
+                    displayFileIntoListView(response);
                     txtIp.ReadOnly = true;
                     txtPassword.ReadOnly = true;
                     txtUsername.ReadOnly = true;
@@ -53,6 +53,21 @@ namespace FTP_Client
             {
                 MessageBox.Show("Kết nối thất bại, vui lòng thực hiện lại: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+        }
+        private void displayFileIntoListView(FtpWebResponse response)
+        {
+            lstDisplayList.Items.Clear();
+            using (var reader = new System.IO.StreamReader(response.GetResponseStream()))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    // Lấy tên file từ thông tin chi tiết
+                    string fileName = line.Substring(line.LastIndexOf(' ') + 1);
+                    // Thêm tên file vào ListView
+                    lstDisplayList.Items.Add(fileName);
+                }
             }
         }
     }
