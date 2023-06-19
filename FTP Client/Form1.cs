@@ -70,5 +70,53 @@ namespace FTP_Client
                 }
             }
         }
+         private void btnDownload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedFile = null;
+                if (lstDisplayList.SelectedItems.Count > 0)
+                        {
+                            ListViewItem iTem = lstDisplayList.SelectedItems[0];
+                            selectedFile = iTem.Text;
+                        }
+
+                     SaveFileDialog saveFileDialog = new SaveFileDialog();
+                     saveFileDialog.FileName = selectedFile;
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string savePath = saveFileDialog.FileName;
+                            request = (FtpWebRequest)WebRequest.Create(new Uri(txtIp.Text + "/" + selectedFile));
+                            request.Method = WebRequestMethods.Ftp.DownloadFile;
+                            request.Credentials = new NetworkCredential(txtUsername.Text, txtPassword.Text);
+
+                            request.UseBinary = true;
+                            request.UsePassive = true;
+                            request.KeepAlive = true;
+                            
+                            using (FtpWebResponse downloadResponse = (FtpWebResponse)request.GetResponse())
+                            {
+                                using (Stream responseStream = downloadResponse.GetResponseStream())
+                                {
+                                    using (FileStream fileStream = new FileStream(savePath, FileMode.Create))
+                                    {
+                                        byte[] buffer = new byte[2048];
+                                        int bytesRead;
+                                        while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                                        {
+                                            fileStream.Write(buffer, 0, bytesRead);
+                                        }
+                                    }
+                                }
+                            }
+                            MessageBox.Show("Download Complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+            }
+            catch (WebException ex)
+            {
+             
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
