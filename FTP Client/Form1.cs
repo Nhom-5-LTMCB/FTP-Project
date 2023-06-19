@@ -68,27 +68,24 @@ namespace FTP_Client
             }         
         }
 
-        public void upload(string localFile)
+        public void upload(string localFile, string filename)
         {
             try
             {
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(uri);
-                /* Log in to the FTP Server with the User Name and Password Provided */
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(uri + filename);
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
-                /* When in doubt, use these options */
+
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
                 ftpRequest.KeepAlive = true;
-                /* Specify the Type of FTP Request */
+
                 ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
-                /* Establish Return Communication with the FTP Server */
                 ftpStream = ftpRequest.GetRequestStream();
-                /* Open a File Stream to Read the File for Upload */
                 FileStream localFileStream = new FileStream(localFile, FileMode.Open);
-                /* Buffer for the Downloaded Data */
+
                 byte[] byteBuffer = new byte[bufferSize];
                 int bytesSent = localFileStream.Read(byteBuffer, 0, bufferSize);
-                /* Upload the File by Sending the Buffered Data Until the Transfer is Complete */
+
                 try
                 {
                     while (bytesSent != 0)
@@ -98,7 +95,7 @@ namespace FTP_Client
                     }
                 }
                 catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-                /* Resource Cleanup */
+
                 localFileStream.Close();
                 ftpStream.Close();
                 ftpRequest = null;
@@ -111,12 +108,14 @@ namespace FTP_Client
         private void btnUpload_Click(object sender, EventArgs e)
         {
             string filePath = null;
+            string fileName = null;
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 filePath = ofd.FileName;
+                fileName = ofd.SafeFileName;
             }
-            upload(filePath);
+            upload(filePath, fileName);
         }
     }
 }
